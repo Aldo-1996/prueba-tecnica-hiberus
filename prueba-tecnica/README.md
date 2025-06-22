@@ -25,6 +25,7 @@ git clone <url-del-repositorio>
 
 ### 2. Ejecutar el proyecto (consideraciones):
 
+* Realizar un **mvn clean install**
 * Ejecutar el archivo **launch-compose.sh** que levanta los contenedores necesarios para inicializar la aplicación.
 * Este proyecto tiene una parte Front End en Angular v15.0.4 donde se tienen las pantallas que realizan solicitudes a este Backend
 
@@ -42,16 +43,16 @@ JDBC URL: jdbc:h2:mem:testdb
 
 ### DepartmentController:
 
-* `POST /department` – Crea un nuevo departamento
-* `POST /department/{deparmentId}` – Eliminación lógica de un departamento
+* `POST /department` �?Crea un nuevo departamento
+* `POST /department/{deparmentId}` �?Eliminación lógica de un departamento
 
 ### EmployeeController:
 
-* `POST /employee` – Crea un nuevo empleado asociado a un departamento
-* `POST /employee/{employeeId}` – Eliminación lógica del empleado
-* `GET /employee/highestSalary` – Devuelve empleado con salario más alto
-* `GET /employee/lowerAge` – Devuelve el empleado más joven
-* `GET /employee/countLastMonth` – Número de empleados ingresados en el último mes
+* `POST /employee` �?Crea un nuevo empleado asociado a un departamento
+* `POST /employee/{employeeId}` �?Eliminación lógica del empleado
+* `GET /employee/highestSalary` �?Devuelve empleado con salario más alto
+* `GET /employee/lowerAge` �?Devuelve el empleado más joven
+* `GET /employee/countLastMonth` �?Número de empleados ingresados en el último mes
 
 ## 🔧 Consideraciones Técnicas
 
