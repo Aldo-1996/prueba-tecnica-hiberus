@@ -1,0 +1,31 @@
+<div class="overflow-hidden text-sm">
+    <!-- Cabecera -->
+    <div class="grid grid-cols-9 bg-gray-100 font-semibold text-gray-700 border-b border-gray-300 py-2 px-4">
+        <div>Nombres</div>
+        <div>Apellidos</div>
+        <div>Edad</div>
+        <div>Rol</div>
+        <div>Salario</div>
+        <div>Ingreso</div>
+        <div>Salida</div>
+        <div>Departamento</div>
+        <div>¿Está activo?</div>
+    </div>
+
+    <!-- Filas de usuarios -->
+    <div *ngFor="let employee of employees" class="grid grid-cols-9 border-b border-gray-200 py-2 px-4 hover:bg-gray-50">
+        <div>{{ employee.names }}</div>
+        <div>{{ employee.surnames }}</div>
+        <div>{{ employee.age }}</div>
+        <div>{{ employee.role }}</div>
+        <div>${{ employee.salary }}</div>
+        <div>{{ employee.entryDate }}</div>
+        <div>{{ employee.departureDate || '—' }}</div>
+        <div>{{ employee.department.name }}</div>
+        <div>
+            <span [ngClass]="employee.enabled === 'A' ? 'text-green-600 font-medium' : 'text-red-600 font-medium'">
+                {{ employee.enabled === 'A' ? 'Sí' : 'No' }}
+              </span>
+        </div>
+    </div>
+</div>

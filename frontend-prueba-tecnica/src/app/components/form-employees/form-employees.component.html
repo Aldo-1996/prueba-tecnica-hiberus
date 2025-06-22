@@ -1,0 +1,106 @@
+<div class="justify-center items-center">
+
+    <h2 class="text-2xl font-bold mb-6">Registro de Empleado</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="grid grid-cols-1 gap-6 max-w-xl">
+    
+      <!-- Nombres -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Nombres</label>
+        <input type="text" formControlName="names"
+          class="mt-1 w-full h-8 rounded-md pl-2 border-gray-300 shadow-sm focus:ring focus:ring-blue-200" />
+        <div *ngIf="registerForm.get('names')?.touched && registerForm.get('names')?.invalid" class="text-red-600 text-sm">
+          Campo obligatorio
+        </div>
+      </div>
+    
+      <!-- Apellidos -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Apellidos</label>
+        <input type="text" formControlName="surnames"
+          class="mt-1 w-full h-8 rounded-md pl-2 border-gray-300 shadow-sm focus:ring focus:ring-blue-200" />
+        <div *ngIf="registerForm.get('surnames')?.touched && registerForm.get('surnames')?.invalid" class="text-red-600 text-sm">
+          Campo obligatorio
+        </div>
+      </div>
+    
+      <!-- Edad -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Edad</label>
+        <input type="number" formControlName="age"
+          class="mt-1 w-full h-8 rounded-md pl-2 border-gray-300 shadow-sm focus:ring focus:ring-blue-200" />
+        <div *ngIf="registerForm.get('age')?.touched && registerForm.get('age')?.invalid" class="text-red-600 text-sm">
+          Debe ser mayor o igual a 18
+        </div>
+      </div>
+    
+      <!-- Rol -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Rol</label>
+        <input type="text" formControlName="role"
+          class="mt-1 w-full h-8 pl-2 rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200" />
+        <div *ngIf="registerForm.get('role')?.touched && registerForm.get('role')?.invalid" class="text-red-600 text-sm">
+          Campo obligatorio
+        </div>
+      </div>
+    
+      <!-- Salario -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Salario</label>
+        <input type="number" formControlName="salary"
+          class="mt-1 w-full h-8 rounded-md pl-2 border-gray-300 shadow-sm focus:ring focus:ring-blue-200" />
+        <div *ngIf="registerForm.get('salary')?.touched && registerForm.get('salary')?.invalid" class="text-red-600 text-sm">
+          Debe ser mayor o igual a 0
+        </div>
+      </div>
+    
+      <!-- Fecha de ingreso -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Fecha de ingreso</label>
+        <input type="date" formControlName="entryDate" [max]="currentDate"
+          class="mt-1 w-full h-8 rounded-md pl-2 pr-2 border-gray-300 shadow-sm focus:ring focus:ring-blue-200" />
+        <div *ngIf="registerForm.get('entryDate')?.touched && registerForm.get('entryDate')?.invalid" class="text-red-600 text-sm">
+          Campo obligatorio
+        </div>
+      </div>
+    
+      <!-- Fecha de salida -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Fecha de salida</label>
+        <input type="date" formControlName="departureDate" [max]="currentDate"
+          class="mt-1 w-full h-8 rounded-md pl-2 pr-2 border-gray-300 shadow-sm focus:ring focus:ring-blue-200" />
+      </div>
+    
+      <!-- Área -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Área</label>
+        <select formControlName="department"
+          class="mt-1 w-full h-8 rounded-md pl-2 pr-2 border-gray-300 shadow-sm focus:ring focus:ring-blue-200">
+          <option value="" disabled selected>Seleccione un área</option>
+          <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+        </select>
+        <div *ngIf="registerForm.get('department')?.touched && registerForm.get('department')?.invalid" class="text-red-600 text-sm">
+          Seleccione un área
+        </div>
+      </div>
+    
+      <!-- Botón -->
+      <div>
+        <button type="submit"
+          class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+          Registrar
+        </button>
+      </div>
+      <!-- 
+        
+        
+      -->
+      <div *ngIf="showConfirmMessage"  class="w-full h-8 text-center transition-opacity duration-500 ease-in-out opacity-100 bg-green-100 text-green-800 rounded content-center"
+        [class.opacity-0]="hideConfirmMessage">
+        <span>Empleado guardado con éxito</span>
+      </div>
+    </form>
+
+</div>
+
+

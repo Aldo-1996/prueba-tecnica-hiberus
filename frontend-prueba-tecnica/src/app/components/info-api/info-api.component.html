@@ -1,0 +1,82 @@
+<div class="w-full items-center justify-center">
+
+    <div class="mb-4 flex flex-col w-[22%]">
+
+        <h1 class="font-bold mb-2">Empleado con el salario más alto</h1>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Nombres</span>
+            <span class="font-normal">{{ highestSalaryEmployee.names }}</span>
+        </div>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Apellidos</span>
+            <span class="font-normal">{{ highestSalaryEmployee.surnames }}</span>
+        </div>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Edad</span>
+            <span class="font-normal">{{ highestSalaryEmployee.age }}</span>
+        </div>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Rol</span>
+            <span class="font-normal">{{ highestSalaryEmployee.role }}</span>
+        </div>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Salario</span>
+            <span class="font-normal">${{ highestSalaryEmployee.salary }}</span>
+        </div>
+    
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Área</span>
+            <span class="font-normal">{{ highestSalaryEmployee.department.name }}</span>
+        </div>
+    </div>
+
+
+    <div class="mb-8 flex flex-col w-[22%]">
+
+        <h1 class="font-bold mb-2">Empleado más joven</h1>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Nombres</span>
+            <span class="font-normal">{{ youngEmployee.names }}</span>
+        </div>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+
+            <span class="font-medium">Apellidos</span>
+            <span class="font-normal">{{ youngEmployee.surnames }}</span>
+        </div>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Edad</span>
+            <span class="font-normal">{{ youngEmployee.age }}</span>
+        </div>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Rol</span>
+            <span class="font-normal">{{ youngEmployee.role }}</span>
+        </div>
+
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Salario</span>
+            <span class="font-normal">${{ youngEmployee.salary }}</span>
+        </div>
+    
+        <div class="grid grid-cols-[150px_1fr] py-1 border-b border-gray-300">
+            <span class="font-medium">Área</span>
+            <span class="font-normal">{{ youngEmployee.department.name }}</span>
+        </div>
+    </div>
+
+    <div class="mb-4 flex flex-col w-[22%]">
+        <div class="grid grid-cols-[400px_1fr] py-1">
+            <span class="font-medium"># Empleados ingresados en el último mes</span>
+            <span class="font-normal">{{ numberLastMonthEmployees.numberEmployees }}</span>
+        </div>
+    </div>
+
+</div>
